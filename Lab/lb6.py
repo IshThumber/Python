@@ -88,3 +88,23 @@
 # print(functools.reduce(lambda a, b: a if a > b else b, lis))
 # Lets filter only even nubers
 
+def div(a,b):
+    print(a/b)
+
+# when b>a, it will return fraction
+def smart_div(a, b):
+    if a > b:
+        return a/b
+    else:
+        return b/a
+# imagine if we only have div() function
+# How to swap the parameters from the outside?
+def intelligent_div(func):
+    def inner(a,b):
+        if a < b:
+            a,b = b,a
+        return func(a,b)
+    return inner
+
+# connecting functions
+div = intelligent_div(div)
