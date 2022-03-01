@@ -1,0 +1,1 @@
+print("Package Lab10 is imported")
